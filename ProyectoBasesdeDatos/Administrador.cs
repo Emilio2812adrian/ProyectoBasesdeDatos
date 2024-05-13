@@ -16,5 +16,12 @@ namespace ProyectoBasesdeDatos
         {
             InitializeComponent();
         }
+
+        private void agregarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CrearUsuario usuario = new CrearUsuario();
+            usuario.Show();
+        }
     }
 }
