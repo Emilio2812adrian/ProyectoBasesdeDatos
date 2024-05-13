@@ -128,7 +128,7 @@ namespace ProyectoBasesdeDatos
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            //Hola mundo
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 if (row.Cells[1].Value != null && row.Cells[2].Value != null && row.Cells[3].Value != null)
