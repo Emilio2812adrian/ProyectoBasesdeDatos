@@ -126,94 +126,58 @@ namespace ProyectoBasesdeDatos
 
 
 
-
-
-
-
-
-
-
         private void button1_Click(object sender, EventArgs e)
         {
-            string usuario;
-            string contra;
-            string tipo;
-            bool vans = true;
-            for (int i = 0; i < 2; i++)
-            {
-                if (dataGridView1.Rows[i].Cells[1].Value.ToString() == textBox2.Text)
-                {
-                    
-                    if (dataGridView1.Rows[i].Cells[2].Value.ToString() == textBox1.Text)
-                        
 
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[1].Value != null && row.Cells[2].Value != null && row.Cells[3].Value != null)
+                {
+                    if (row.Cells[1].Value.ToString() == textBox2.Text && row.Cells[2].Value.ToString() == textBox1.Text)
                     {
-                       // MessageBox.Show("Existe Contraseña");
-                        if (dataGridView1.Rows[i].Cells[3].Value.ToString() == "Admin")
+                        if (row.Cells[3].Value.ToString() == "Admin")
                         {
                             this.Hide();
                             Administrador administrador = new Administrador();
                             administrador.Show();
+                            return;
                         }
-                        if (dataGridView1.Rows[i].Cells[3].Value.ToString() == "Dig")
+                        else if (row.Cells[3].Value.ToString() == "Dig")
                         {
                             this.Hide();
                             Digitador digitador = new Digitador();
                             digitador.Show();
+                            return;
                         }
-
                     }
                 }
-                else 
+            }
+            MessageBox.Show("Credenciales inválidas");
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[1].Value != null && row.Cells[2].Value != null && row.Cells[3].Value != null)
                 {
-                    MessageBox.Show("Credenciales inválidas");
+                    if (row.Cells[1].Value.ToString() == textBox2.Text && row.Cells[2].Value.ToString() == textBox1.Text)
+                    {
+                        if (row.Cells[3].Value.ToString() == "Admin")
+                        {
+                            this.Hide();
+                            Administrador administrador = new Administrador();
+                            administrador.Show();
+                            return;
+                        }
+                        else if (row.Cells[3].Value.ToString() == "Dig")
+                        {
+                            this.Hide();
+                            Digitador digitador = new Digitador();
+                            digitador.Show();
+                            return;
+                        }
+                    }
                 }
             }
-            
-                //if (lector.HasRows == true)
-                //{
-                //    if (lector2.Equals("Admin"))
-                //    {
+            MessageBox.Show("Credenciales inválidas");
 
-                //        MessageBox.Show("si entro");
-                //        this.Hide();
-                //        Digitador digitador = new Digitador();
-                //        digitador.Show();
-                //    }
-                //    else if (lector2.Equals("Dig"))
-                //    {
-                //        this.Hide();
-                //        Digitador digitador = new Digitador();
-                //        digitador.Show();
-                //    }
-                //}
-
-
-
-
-
-
-                //if (dt.Rows[0][1].ToString() == "Admin")
-                //{
-                //    Digitador digitador = new Digitador();
-                //    this.Hide();
-                //    digitador.Show();
-                //}
-
-                /* if (lector.HasRows== true)
-                 {
-                     Digitador digitador = new Digitador();
-                     this.Hide();
-                     digitador.Show();
-                 }*/
-                //else
-                //{
-                //    MessageBox.Show("Nombre de Usuario o contraseña inválido");
-                //}
-
-            //}
-
-            // logear(textBox2.Text, textBox1.Text);
         }
     }
 }

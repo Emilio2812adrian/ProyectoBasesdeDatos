@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace ProyectoBasesdeDatos
 {
-    public partial class Administrador : Form
+    public partial class CrearUsuario : Form
     {
-        public Administrador()
+        public CrearUsuario()
         {
             InitializeComponent();
-        }
-
-        private void agregarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CrearUsuario usuario = new CrearUsuario();
-            usuario.Show();
         }
     }
 }
